@@ -14,8 +14,8 @@
 
 🤞 Git
 
--[문법](./git/git_grammar.md)
+- [문법](./git/git_grammar.md)
 
 🤞 GitHub
 
--[문법](./github/github_grammar.md)
+- [문법](./github/github_grammar.md)
