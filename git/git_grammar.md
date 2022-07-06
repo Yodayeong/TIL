@@ -1,8 +1,4 @@
-# GIT
-
-분산 버전 관리 시스템
-
-
+# 🎄GIT(분산 버전 관리 시스템)
 
 <u>버전 관리?</u>
 
@@ -12,39 +8,35 @@
 
 
 
-## 기본흐름
+## *기본흐름
 
 Git은 파일을 modified, staged, committed로 관리
 
-- modified : 파일이 수정된 상태 (add 명령어를 통하여 staging area로)
-- staged : 수정한 파일을 곧 커밋할 것이라고 표시한 상태 (commit 명령어로 저장소)
-- committed : 커밋이 된 상태
+
+
+✔ **작업을 하고**
+
+-working directory
+
+✔ **변경된 파일을 모아** ($ git add) 
+
+-staging area라는 중간 공간으로
+
+-내가 버전으로 기록하기 위한 파일들을 staging area에 모음
+
+✔ **버전으로 남긴다.** ($ git commit)
+
+-repository
 
 
 
-1. 작업을 하고
+## *기본 명령어
 
-   -working directory
-
-2. 변경된 파일을 모아 ($ git add) 
-
-   -staging area라는 중간 공간으로
-
-   -내가 버전으로 기록하기 위한 파일들을 staging area에 모음
-
-3. 버전으로 남긴다. ($ git commit)
-
-   -repository
-
-
-
-## 기본 명령어
-
-### git init
+### 👌 git init
 
 저장소를 처음 생성
 
-### $ git add <파일명>
+### 👌 $ git add <파일명>
 
 working directory상의 변경 내용을 staging area에 추가하기 위해 사용
 
@@ -53,13 +45,13 @@ working directory상의 변경 내용을 staging area에 추가하기 위해 사
 
 ($ git add . : 모든 파일을 add)
 
-### $ git commit -m '<커밋메시지>'
+### 👌 $ git commit -m '<커밋메시지>'
 
 staged 상태의 파일들을 커미을 통해 버전으로 기록
 
 - Git은 데이터를 파일 시스템의 스냅샷으로 관리
 
-### $ git log
+### 👌 $ git log
 
 현재 저장소에 기록된 커밋(버전)을 조회
 
@@ -68,7 +60,7 @@ staged 상태의 파일들을 커미을 통해 버전으로 기록
   - $ git log --oneline : 한줄로 보여줘.
   - $ git log -2 --oneline : 최근 두개를 한줄로 보여줘.
 
-### $ git status
+### 👌 $ git status
 
 Git 저장소에 있는 파일의 상태를 확인하기 위하여 활용
 
@@ -79,19 +71,19 @@ Git 저장소에 있는 파일의 상태를 확인하기 위하여 활용
 
 
 
-### 총정리
+## *간단정리
 
-<u>저장소 처음 만들때</u> 
+**<u>저장소 처음 만들때</u>** 
 
 $ git init 
 
-<u>버전을 기록할 때</u> 
+**<u>버전을 기록할 때</u>** 
 
 $ git add . 
 
 $ git commit -m '커밋메시지' 
 
-<u>상태 확인할 때</u> 
+**<u>상태 확인할 때</u>** 
 
 $ git status : 1통, 2통 
 
@@ -99,7 +91,7 @@ $ git log : 커밋 확인
 
 
 
-## Git Status
+## *Git Status
 
 ### a.txt 파일을 만든 직후
 

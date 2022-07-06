@@ -1,8 +1,8 @@
-# 마크다운
+# 🎄마크다운
 
 
 
-## 제목/소제목 (Heading)
+## *제목/소제목 (Heading)
 
 #의 개수에 따라 h1 ~ h6까지 표현 가능하다.
 
@@ -16,7 +16,7 @@
 
 
 
-## 목록 (List)
+## *목록 (List)
 
 목록 활용시 단계를 tab과 shift + tab으로 조절한다.
 
@@ -54,7 +54,7 @@
 
 
 
-## 코드 블록
+## *코드 블록
 
 ### Fenced Code Block
 
@@ -88,7 +88,7 @@ print('hello')
 
 
 
-## 링크
+## *링크
 
 `[문자열](url)` 을 통해 링크를 작성 가능
 
@@ -96,7 +96,7 @@ print('hello')
 
 
 
-## 이미지
+## *이미지
 
 - `![문자열](url)` 을 통해 작성 가능 / 이미지 그냥 끌어오기
 
@@ -106,9 +106,9 @@ print('hello')
 
   
 
-![보노보노](마크다운.assets/보노보노.png)
+![루피](https://postfiles.pstatic.net/MjAyMTA4MTFfMzkg/MDAxNjI4NjY1NjgwNTUw.K2a44KxCgskoaKSw8cH5ySnsEuadVA8wphcrBOrDwBQg.R4GfkzCRdTa1jdicp9p4Ph8A4THJ8tX1mZO-uTqzgygg.JPEG.bbekimha/%EB%A3%A8%ED%94%BC.jpg?type=w966)
 
-## 인용문
+## *인용문
 
 `>`를 통해 인용문을 작성
 
@@ -116,7 +116,7 @@ print('hello')
 
 
 
-## 표
+## *표
 
 타이포라 기능을 적극 활용하자.
 
@@ -129,7 +129,7 @@ print('hello')
 
 
 
-## 텍스트 강조
+## *텍스트 강조
 
 **굵게(볼드체)** : `**`
 
