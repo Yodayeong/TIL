@@ -6,20 +6,12 @@
 
 ## 🙌Chapters
 
-✔ **마크다운**
+### [GIT/GITHUB]
 
-- [문법](./markdown/markdown_grammar.md) 바로가기
+✔ **[MarkDown](./markdown/markdown_grammar.md)**
 
-- [실습](./markdown/markdown_practice.md) 바로가기
+✔ **[CLI](./cli/cli_grammar.md)**
 
-✔ **CLI**
+✔ **[GIT](./git/git_grammar.md)**
 
-- [문법](./cli/cli_grammar.md) 바로가기
-
-✔ **Git**
-
-- [문법](./git/git_grammar.md) 바로가기
-
-✔ **GitHub**
-
-- [문법](./github/github_grammar.md) 바로가기
+✔ **[GitHub](./github/github_grammar.md)**
