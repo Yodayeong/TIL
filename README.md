@@ -21,3 +21,11 @@
 ### [CodeUp]
 
 **[문제 및 풀이 보기](./codeup/codeup.md)**
+
+### [Python 실습]
+
+**[실습1](./python_assignment/day1/)**
+
+**[실습2](./python_assignment/day2/)**
+
+**[실습3](./python_assignment/day3/)**
