@@ -24,8 +24,12 @@
 
 ### [Python 실습]
 
-**[실습1](./python_assignment/day1/)**
+**[day2](./python_assignment/day2/)**
 
-**[실습2](./python_assignment/day2/)**
+**[day3](./python_assignment/day3/)**
 
-**[실습3](./python_assignment/day3/)**
+**[day4](./python_assignment/day4/)**
+
+**[day5_project](./python_assignment/day5_project/)**
+
+**[day6](./python_assignment/day6/)**
