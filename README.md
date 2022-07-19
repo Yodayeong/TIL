@@ -32,3 +32,6 @@
 
 **[day5_project](./python_assignment/day5_project/)**
 
+**[day6](./python_assignment/day6/)**
+
+**[day7](./python_assignment/day7/)**
