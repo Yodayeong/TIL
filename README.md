@@ -18,10 +18,6 @@
 
 ✔ **[Branch / GitHub Flow](./branch/branch_grammar.md)**
 
-### [CodeUp]
-
-**[문제 및 풀이 보기](./codeup/codeup.md)**
-
 ### [Python 실습]
 
 **[day2](./python_assignment/day2/)**
