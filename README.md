@@ -8,15 +8,11 @@
 
 ### [GIT/GITHUB]
 
-✔ **[MarkDown](./markdown/markdown_grammar.md)**
+**[git/github](./깃,깃허브)**
 
-✔ **[CLI](./cli/cli_grammar.md)**
+### [서류특강]
 
-✔ **[GIT](./git/git_grammar.md)**
-
-✔ **[GitHub](./github/github_grammar.md)**
-
-✔ **[Branch / GitHub Flow](./branch/branch_grammar.md)**
+**[서류특강](./서류특강)**
 
 ### [Python 실습]
 
@@ -31,3 +27,11 @@
 **[day6](./python_assignment/day6/)**
 
 **[day7](./python_assignment/day7/)**
+
+### [파이썬]
+
+**[파이썬](./파이썬)**
+
+### [알고리즘]
+
+**[알고리즘](./알고리즘)**
