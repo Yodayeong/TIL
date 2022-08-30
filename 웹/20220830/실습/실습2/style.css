@@ -1,0 +1,16 @@
+/* 아래에 CSS를 작성해주세요. */
+.card{
+    width: 300px;
+    height: 900px;
+}
+
+.card-img{
+    width: 300px;
+    height: 300px;
+    display: flex;
+}
+
+.card-tex{
+    width: 30%;
+    letter-spacing: -100px;
+}
