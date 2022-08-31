@@ -1,0 +1,35 @@
+/* 아래에 CSS를 작성해주세요. */
+
+.title{
+    text-align: center;
+}
+
+.card-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    margin: 2%;
+    width: 300px;
+    height: 450px;
+    border-radius: 15px;
+    background-color: white;
+}
+
+.card-img{
+    align-self: center;
+    width: 300px;
+    height: 300px;
+    border-radius: 15px;
+}
+
+.card-text{
+    align-self: center;
+    width: 92%;
+    height: 150px;
+    background-color: white;
+}
