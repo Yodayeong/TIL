@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+    <title>Shop</title>
+</head>
+<body>
+
+    <!--nav bar-->
+    <nav class="navbar navbar-expand-lg sticky-top bg-light" style="background-color:white;" >
+        <div class="container-fluid" style="margin:0 0 0 64px;">
+        <a class="navbar-brand" href="#">Start Bootstrap</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin: 0 64px 0 0;">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Shop
+                </a>
+                <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">All Products</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Popular Items</a></li>
+                <li><a class="dropdown-item" href="#">New Arrivals</a></li>
+                </ul>
+            </li>
+            </ul>
+            <form class="d-flex">
+                <button type="button" class="btn  btn-sm btn-outline-dark" style="display:flex;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16" style="margin: 7px 4px 0 4px;">
+                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                    </svg>
+                    <p style="margin:4px;">Cart</p>
+                    <p style="background-color:black; color:white; border-radius:15px; margin:4px; padding:2px 10px;">0</p>
+                </button>
+            </form>
+        </div>
+        </div>
+    </nav>
+
+    <!--banner-->
+    <div class="container" style="padding:5rem;">
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+                <img class="img-fluid" src="https://dummyimage.com/600x700/dee2e6/6c757d.jpg" alt="">
+            </div>
+            <div class="col-md-6 col-sm-12" style="padding:6rem 2rem;">
+                <div style="padding:0 0 1rem 0;">
+                    <p style="margin:0; font-size:14px;">SKU: BST-498</p>
+                    <h1>Shop item template</h1>
+                    <p style="font-size:20px;"><span style="text-decoration:line-through;">$45.00</span> %40.00</p>
+                </div>
+                <div style="padding:1rem 0 0 0;">
+                    <p style="font-size:20px;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo aperiam id veritatis, aut, dolor dolorem minus omnis ex architecto magnam praesentium voluptate temporibus unde tenetur nemo eos culpa dolores et.</p>
+                    <div class="d-flex">
+                        <button type="button" class="btn" style="border:1px solid lightgray; color:black;">1</button>
+                        <button type="button" class="btn  btn-sm btn-outline-dark" style="display:flex; margin: 0 0 0 1rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16" style="margin: 7px 4px 0 4px;">
+                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                            </svg>
+                            <p style="margin:4px;">Add to cart</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--content-->
+    <div class="bg-light">
+        <div class="container" style="padding:5rem;">
+            <h2>Related products</h2>
+            <div class="row" style="margin-bottom:2rem;">
+                <div class="col-md-3 col-sm-12" style="margin-top: 1rem;">
+                    <div class="card" style="width: 230px; height:350px; display: flex; align-items:center;">
+                        <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <h5 class="card-title text-center" style="margin:0.5rem;">Fancy Product</h5>
+                        <div class="card-text text-center" style="margin:0.5rem;">
+                            $40.00 - $80.00
+                        </div>
+                        <div class="card-text text-center" style="margin:0.5rem;"></div>
+                        <div style="display: flex; justify-content: center; ">
+                        <a href="#" class="btn btn-outline-dark" style="margin-top:3rem;" >View options</a>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12" style="margin-top: 1rem;">
+                    <div class="card" style="width: 230px; height:350px; display: flex; align-items:center;">
+                        <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
+                        <span class="badge text-bg-dark" style="position:absolute; margin-top:0.7rem; margin-left:70%;">Sale</span>
+                        <div class="card-body">
+                        <h5 class="card-title text-center" style="margin:0.5rem;">Special Item</h5>
+                        <div class="card-text text-center" style="margin:0.5rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16" color="#F5BD1F">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16" color="#F5BD1F">
+                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16" color="#F5BD1F">
+                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16" color="#F5BD1F">
+                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16" color="#F5BD1F">
+                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+                        </div>
+                        <div class="card-text text-center" style="margin:0.5rem;"><span style="text-decoration:line-through; opacity:50%;">$20.00</span> $18.00</div>
+                        <div style="display: flex; justify-content: center; ">
+                        <a href="#" class="btn btn-outline-dark" style="margin-top:1rem;" >Add to cart</a>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12" style="margin-top: 1rem;">
+                    <div class="card" style="width: 230px; height:350px; display: flex; align-items:center;">
+                        <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
+                        <span class="badge text-bg-dark" style="position:absolute; margin-top:0.7rem; margin-left:70%;">Sale</span>
+                        <div class="card-body">
+                        <h5 class="card-title text-center" style="margin:0.5rem;">Sale Item</h5>
+                        <div class="card-text text-center" style="margin:0.5rem;">
+                            <span style="opacity:50%; text-decoration:line-through;">$50.00</span> $25.00
+                        </div>
+                        <div class="card-text text-center" style="margin:0.5rem;"></div>
+                        <div style="display: flex; justify-content: center; ">
+                        <a href="#" class="btn btn-outline-dark" style="margin-top:3rem;" >Add to cart</a>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12" style="margin-top: 1rem;">
+                    <div class="card" style="width: 230px; height:350px; display: flex; align-items:center;">
+                        <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <h5 class="card-title text-center" style="margin:0.5rem;">Popular Item</h5>
+                        <div class="card-text text-center" style="margin:0.5rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16" color="#F5BD1F">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16" color="#F5BD1F">
+                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16" color="#F5BD1F">
+                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16" color="#F5BD1F">
+                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16" color="#F5BD1F">
+                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+                        </div>
+                        <div class="card-text text-center" style="margin:0.5rem;">$40.00</div>
+                        <div style="display: flex; justify-content: center; ">
+                        <a href="#" class="btn btn-outline-dark" style="margin-top:1rem;" >Add to cart</a>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--footer-->
+    <div style="background-color:#212529; height:7.5rem; display:flex; justify-content:center; align-items:center;">
+        <div class="container">
+            <p class="text-center" style="color:white; margin:0;">Copyright © Your Website 2022</p>
+        </div>
+        </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</body>
+</html>

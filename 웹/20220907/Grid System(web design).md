@@ -19,6 +19,20 @@
   - 12개의 column
   - 6개의 grid breakpoints
 
+- ```
+   .col-xs-* 
+   항상 가로로 배치 
+  
+   .col-sm-*
+   768px 이하에서 세로로 표시 시작
+  
+   .col-md-*
+   992px 이하에서 세로로 표시 시작
+  
+   .col-lg-*
+   1200px 이하에서 세로로 표시 시작 
+  ```
+
 - ```html
   <div class="container">
       <div class="row">
