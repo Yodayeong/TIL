@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">JS 기초</h1>
+    <h2>DOM 조작</h2>
+    <p class="text">querySelector</p>
+    <p class="text">querySelectorAll</p>
+
+    <script>
+        //#3.
+        //선택자를 활용해 선택할 때
+        //하나를 선택한다. => querySelector
+        //모든 결과를 선택한다. => querySelectorAll
+        console.log(document.querySelector('#title'))
+        // <h1 id="title">JS 기초</h1>
+        console.log(document.querySelectorAll('.text'))
+        //NodeList(2) [p.text, p.text]
+        console.log(document.querySelector('.text'))
+        //<p class="text">querySelector</p>
+
+        //#4. console 창에서 a태그 생성 및 body에 append
+        /*
+        const a = document.createElement('a')
+        alert
+        a
+        a.innerText = '구글로 떠나기'
+        const body = document.querySelector('body')
+        body.appendChild(a)
+        */
+
+        //#5. 기존의 것들 수정하기
+        /*
+        title
+        title.innerText = '안녕하세요'
+        title.innterHTML = '<h2>우왕</h2>'
+
+        body.removeChild(a)
+        title.remove()
+        */
+    </script>
+</body>
+</html>
