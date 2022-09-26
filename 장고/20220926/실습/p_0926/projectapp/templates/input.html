@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div style="padding:2rem;">
+    <form action="{% url 'output' %}" method="GET">
+        이름을 입력해주세요. <br><br>
+        <input type="text" name="name">
+        <input class="btn btn-outline-dark" type="submit" style="padding:0 0.5rem; height:2rem;">
+    </form>
+</div>
+
+{% endblock %}

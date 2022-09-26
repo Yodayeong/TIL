@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div style="padding:2rem;">
+    <h1 style="font-size:20px;">Welcome to Yoda's Page!</h1>
+    <ul>
+        <li>if you want to find out whether a number is odd or even, <span style="font-weight:bold;">👉type is-odd-even/number on URL</span></li>
+        <li>if you want to calculate numbers <span style="font-weight:bold;">👉type calculate/number1/number2 on URL</span></li>
+        <li>if you want to find your past <a style="font-weight:bold; color:black; text-decoration:none;" href="{% url 'input' %}">👉전생 알아보기</a></li>
+        
+    </ul>
+</div>
+
+{% endblock %}
