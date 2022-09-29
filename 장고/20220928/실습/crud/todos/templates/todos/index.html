@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>index.html</h1>
+
+    <form action="{% url 'todos:create' %}">
+        <input type="text" name="content__" maxlength="80">
+        <input type="submit" value="할 일 추가">
+    </form>
+    <hr>
+    <ul>
+        {% for todo in todos %}
+        <li>{{ todo.id }} - {{ todo.content }} - {{ todo.completed }}
+            <a href="{% url 'todos:delete' todo.id %}">삭제</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

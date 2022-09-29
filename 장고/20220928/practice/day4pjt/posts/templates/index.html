@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+<body>
+    <h1>게시판</h1>
+    <ul>
+        {% for post in posts %}
+        <li>제목: {{ post.title }} | 내용: {{ post.content }}
+            <a href="">[수정] / </a>
+            <a href="/posts/delete/{{ post.id }}">[삭제]</a>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'posts:new' %}">새 글 쓰기</a>
+</body>
+</html>

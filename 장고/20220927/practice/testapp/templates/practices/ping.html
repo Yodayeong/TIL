@@ -2,7 +2,7 @@
 
 {% block content %}
     <h1>Ping</h1>
-    <form action="/pong" method="GET">
+    <form action="{% url 'testapp:pong' %}" method="GET">
         <input type="text" class="btn" name="ball">
         <input type="submit">
     </form>
