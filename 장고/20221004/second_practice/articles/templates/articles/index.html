@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome to Yoda's Page!</h1>
+    <p>If you want to write a BLOG 👉 <a href="{% url 'articles:new' %}">글쓰기</a></p>
+
+    <br>
+    <h1 style="background-color:aliceblue;">Blog List</h1>
+    {% for article in articles %}
+    <h1><a href="{% url 'articles:detail' article.pk %}" style="text-decoration:none; color:black;">{{ article.pk }}번째 글 | 제목: {{ article.title }}</a></h1>
+    <h3>{{ article.created_at }} | {{ article.updated_at }}</h3>
+    <hr>
+    {% endfor %}
+</body>
+</html>
