@@ -8,17 +8,14 @@
 
 {% block content %}
 
-<h1 class="title">회원가입</h1>
-
-<form class="content" action="" method="POST">
-    {%csrf_token%}
-
-    {{ form.as_p }}
-
+<h1 class="title">{{ user.username }}님의 프로필</h1>
+<div class="content" >
+    <h1><span style="background-color:pink;">아이디</span> : {{ user.username }}</h1>
+    <h1><span style="background-color:pink;">메일</span> : {{ user.email }}</h1>
     <div style="height:2rem;"></div>
-    <input class="btn btn-outline-dark" type="submit" value="제출">
+    <a class="btn btn-outline-dark" href="{% url 'accounts:users' %}">목록으로</a>
     <div style="height:1rem;"></div>
     <a class="btn btn-outline-dark" href="{% url 'articles:index' %}">홈으로</a>
-</form>
+</div>
 
 {% endblock content %}

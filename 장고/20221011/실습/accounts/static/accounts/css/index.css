@@ -1,0 +1,21 @@
+.title{
+    text-align:center; 
+    padding:3rem;
+}
+
+.content{
+    display:flex; 
+    justify-content:center; 
+    flex-direction:column; 
+    padding:0 15rem 3rem 15rem;
+}
+
+.link{
+    text-decoration: none;
+    color:black;
+}
+
+.link:hover{
+    background-color:black;
+    color:pink;
+}

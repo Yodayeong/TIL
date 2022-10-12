@@ -8,17 +8,15 @@
 
 {% block content %}
 
-<h1 class="title">회원가입</h1>
+<h1 class="title">회원 목록</h1>
 
-<form class="content" action="" method="POST">
-    {%csrf_token%}
-
-    {{ form.as_p }}
-
-    <div style="height:2rem;"></div>
-    <input class="btn btn-outline-dark" type="submit" value="제출">
+<div class="content">
+    {% for user in users %}
+    <a class="link" href="{% url 'accounts:detail' user.id %}"><h1>{{ user.username }}</h1></a>
+    <hr>
+    {% endfor %}
     <div style="height:1rem;"></div>
     <a class="btn btn-outline-dark" href="{% url 'articles:index' %}">홈으로</a>
-</form>
+</div>
 
 {% endblock content %}

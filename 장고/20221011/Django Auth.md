@@ -89,185 +89,230 @@ python manage.py shell_plus
 User.objects.create(username='sun', password='12345')
 ```
 
+=> 비밀번호가 12345 로 저장됨.
+
+=> 암호화가 필요함.
+
+```bash
+User.objects.create_user('hong', 'hong@gmail.com', '12345')
+```
+
+=> 암호화가 되어서 저장됨.
+
+- user 인증(비밀번호 확인)
+
+```bash
+from django.contrib.auth import authenticate
+authenticate(username='sun', password='12345')
+```
+
+=> 일치하면 뜨고, 아니면 안뜸
+
 
 
 ### User 모델을 바탕으로 CRUD
 
-
-
-
-
-
-
-
-
-
-
-
-
-### 커스텀 모델 사용하기
-
-- User 모델 설정
+- 회원가입 form 생성**(UserCreationForm 활용)**
 
   ```python
-  #pjt/settings.py
+  #accounts/views.py
   
-  #User Model
-  AUTH_USER_MODEL = 'accounts.Uer'
-  ```
-
-- AbstractUser를 상속받는 커스텀 User 클래스 작성 (상속)
-
-  ```python
-  #accounts/models.py
+  from django.contrib.auth.forms import UserCreationForm
   
-  from django.contrib.auth.models import AbstractUser
+  def index(request):
+      form = UserCreationForm()
+      context = {
+          'form': form
+      }
+      return render(request, 'accounts/index.html', context)
+  ```
+
+  ```html
+  <!-- accounts/templates/accounts/index.html -->
   
-  class User(AbstractUser):
-      pass
+  {% extends 'base.html' %}
+  
+  {% load static %}
+  
+  {% block css %}
+  <link rel="stylesheet" href="{% static 'accounts/css/index.css' %}">
+  {% endblock css %}
+  
+  {% block content %}
+  
+  <h1 class="register-title">회원가입</h1>
+  
+  <!-- form 태그 -->
+  <form class="register-form" action="./index.html" method="POST">
+      
+      <!-- 넘겨받은 form을 p 형식으로 표현 -->
+      {{ form.as_p }}
+  
+      <div style="height:2rem;"></div>
+      <!-- submit 버튼 -->
+      <input class="btn btn-outline-dark" type="submit" value="제출">
+      <div style="height:1rem;"></div>
+      <a class="btn btn-outline-dark" href="{% url 'articles:index' %}">홈으로</a>
+  </form>
+  
+  {% endblock content %}
   ```
-
-- migrate 해주기
-
-  ```bash
-  python manage.py makemigrations
-  python manage.py migrate
-  ```
-
-- superuser 만들기
-
-  ```bash
-  python manage.py createsuperuser
-  ```
-
-
-
-### User 객체 활용
-
-- User 생성
 
   ```python
-  user = User.objects.create_user('john', 'john@google.com', '1q2w3e4r!')
+  #accounts/views.py
+  
+  from django.shrotcuts import redirect
+  
+  def index(request):
+      #POST 방식이라면,
+      if request.method == 'POST':
+          form = UserCreationFOrm(request.POST)
+          if form.is_valid():
+              form.save()
+              return redirect('articles:index')
+      #GET 방식이라면,
+      else:
+          form = UserCreationForm()
+      context = {
+          'form': form
+      }
+      return render(request, 'accounts/index.html', context)
   ```
 
-- User 비밀번호 변경
+  => **Manager isn't available; 'auth.User' has been swapped for 'accounts.User'** 오류 발생
+
+  => UserCreationForm은 현재 장고에서 제공하는 User를 쓰고 있어서, **내가 만든 accounts 앱의 모델 User**로 바꾸어줘야 함.
+
+  => Django 내장 회원가입 폼 UserCreationForm을 **상속**받은 CustomUserCreationForm 생성하고 이를 활용
 
   ```python
-  user = User.objects.get(pk=2)
-  User.set_password('new password')
-  User.save()
+  #accounts/forms.py
+  
+  #django에 내장된 UserCreationForm 과 accounts의 모델에서 정의한 User를 가져옴
+  from django.contrib.auth.forms import UserCreationForm
+  from .models import User
+  
+  #CustomUserCreationForm은 UserCreationForm을 상속받음
+  class CustomUserCreationForm(UserCreationForm):
+      
+      class Meta:
+          #User의 model을 활용
+          model = User
+          fields = ['username', 'email', 'password1', 'password2']
   ```
-
-- User 인증(비밀번호 확인)
 
   ```python
-  from django.contrib.auth import authenticate
-  user = authenticate(username='john', password='secret')
+  #accounts/views.py
+  
+  #forms.py에서 직접 정의한 CustomUserCreationForm 가져오기
+  from .forms import CustomUserCreationForm
+  
+  def index(request):
+      #POST 방식일 때,
+      if request.method == 'POST':
+          #form을 CustomUserCreationForm으로 변경
+          form = CustomUserCreationForm(request.POST)
+          if form.is_valid():
+              form.save()
+              return redirect('articles:index')
+      #GET 방식일 때,
+      else:
+          #form을 CustomUserCreationForm으로 변경
+          form = CustomUserCreationForm()
+      context = {
+          'form': form
+      }
+      return render(request, 'accounts/index.html', context)
   ```
 
 
 
-### signup
+### admin 페이지에서 생성한 User들 보기
+
+```python
+#accounts/admin.py
+
+#accounts 앱의 모델에서 User를 가져옴
+from .models import User
+
+admin.site.register(User)
+```
+
+
+
+### 현재 user model로 수정하기
+
+```python
+#accounts/admin.py
+
+from django.contrib import admin
+#현재 django.contrib.auth의 model을 가져옴
+from django.contrib.auth import get_user_model
+#django.contrib.auth.admin에서 UserAdmin을 가져옴
+from django.contrib.auth.admin import UserAdmin
+
+#get_user_model()호출
+admin.site.register(get_user_model(), UserAdmin)
+```
+
+```python
+#accounts/forms.py
+
+#django에 내장된 UserCreationForm 과 accounts의 모델에서 정의한 User를 가져옴
+from django.contrib.auth.forms import UserCreationForm
+#from .models import User
+from django.contrib.auth.forms import get_user_model
+
+#CustomUserCreationForm은 UserCreationForm을 상속받음
+class CustomUserCreationForm(UserCreationForm):
+    
+    class Meta:
+        #get_user_model 호출
+        model = get_user_model()
+        fields = ['username', 'email', 'password1', 'password2']
+```
+
+
+
+### User Detail 만들기
 
 ```python
 #accounts/urls.py
 
+from django.urls import path
 from . import views
 
 app_name = 'accounts'
 
 urlpatterns = [
-    path('signup/', views.signup, name='signup'),
+    path('signup', views.index, name='index'),
+    #pk값이 들어오면, 해당 detail 페이지로 연결
+    path('<int:pk>/', views.detail, name='detail'),
 ]
 ```
 
 ```python
 #accounts/views.py
 
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import get_user_model
 
-def signup(request):
-    form = UserCreationForm()
+def detail(request, pk):
+    user = get_user_model().objects.get(pk=pk)
     context = {
-        'form': form
+        'user': user
     }
-    return render(request, 'accounts/signup.html', context)
+    return render(request, 'accounts/detail.html', context)
 ```
 
 ```html
-<!--templtes/accounts/signup.html-->
+<!-- accounts/templates/accounts/detail.html -->
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>회원가입</h1>
-    {{ form.as_p }}
-</body>
-</html>
-```
+{% extends 'base.html' %}
 
-- 직접 생성한 모델로 변경
+{% block content %}
 
-```python
-#accounts/views.py
+<h1>{{ user.username }}님의 프로필</h1>
 
-from django.shortcuts import render, redirect
-from django.contrib.auth.forms import UserCreationForm
-
-# Create your views here.
-def signup(request):
-    #POST 요청 처리
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('articles:index')
-    else:
-        form = UserCreationForm()
-    context = {
-        'form': form
-    }
-    return render(request, 'accounts/signup.html', context)
-```
-
-```python
-#accounts/forms.py
-
-from django.contrib.auth.forms import UserCreationForm
-from .models import User
-
-class CustomUserCreationForm:
-
-    class Meta:
-        model = User
-        fields = '__all__'
-```
-
-```python
-#accounts/views.py
-
-from .forms import CustomUserCreationForm
-
-def signup(request):
-    #POST 요청 처리
-    if request.method == 'POST':
-        #CustonUserCreationForm으로 변경
-        form = CustomUserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('articles:index')
-    else:
-        #CustonUserCreationForm으로 변경
-        form = CustomUserCreationForm()
-    context = {
-        'form': form
-    }
-    return render(request, 'accounts/signup.html', context)
+{% endblock content %}
 ```
 
