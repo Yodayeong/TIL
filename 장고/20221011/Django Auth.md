@@ -166,7 +166,7 @@ authenticate(username='sun', password='12345')
   def index(request):
       #POST 방식이라면,
       if request.method == 'POST':
-          form = UserCreationFOrm(request.POST)
+          form = UserCreationForm(request.POST)
           if form.is_valid():
               form.save()
               return redirect('articles:index')
