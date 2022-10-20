@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row">
+    {% for article in articles %}
+    <div class="col-3">
+        <div class="card">
+            {% if article.image %}
+            <img class="card-img-top" src="{{ article.image.url }}" alt="" width="400" height="300">
+            {% endif %}
+            <div class="card-img-body">
+                <h1>{{ article.title }}</h1>
+                <p>{{ article.created_at }} | {{ article.updated_at }}</p>
+                <h1>{{ article.content }}</h1>
+                <a href="{% url 'articles:update' article.pk %}"><p>수정하기</p></a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

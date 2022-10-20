@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-x89s&rq92x+_!t)(ly7^v9-l)#!qdw8f_m_=5^4l)d(!+)xz7='
+SECRET_KEY = 'django-insecure-76#%gcqjh81-is3!(@f#4m8xc+z@)=8&!vs+#9iw%vt8j@rinm'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'articles',
-    'django_bootstrap5'
+    'django_bootstrap5',
+    'imagekit'
 ]
 
 MIDDLEWARE = [
@@ -107,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/SEOUL'
 
 USE_I18N = True
 
@@ -122,11 +123,13 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # Media files (user uploaded files)
-
-MEDIA_ROOT = BASE_DIR / 'images'
 MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'images'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Message Framework
+MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for form in forms %}
+    {{ form.username }}
+    {{ form.content }}
+    <img src="{{ form.image.url }}" alt="{{ form.image }}">
+    <hr>
+{% endfor %}
+
+{% endblock %}
