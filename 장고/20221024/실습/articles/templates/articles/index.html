@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1><a href="{% url 'articles:create' %}">글 작성하기</a></h1>
+<h1><a href="{% url 'articles:show' %}">글 목록보기</a></h1>
+<h1><a href="{% url 'accounts:signup' %}">회원가입하기</a></h1>
+
+{% endblock %}

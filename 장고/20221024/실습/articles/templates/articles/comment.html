@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+
+<p>댓글 작성하기</p>
+<form action="" method="POST">
+    {% csrf_token %}
+    {% bootstrap_form comment_form layout='inline' %}
+    {% bootstrap_button button_type="submit" content="댓글 작성하기"%}
+</form>
+
+<p style="margin:0; margin-top:1rem;">댓글 목록</p>
+<p style="margin:0;">총 댓글 개수 : {{ comment_num }}</p>
+<hr style="margin:0;">
+{% if comments %}
+    {% for comment in comments %}
+        {{ comment.content }} | {{ comment.created_at }} | <a href="{% url 'articles:comment_delete' comment.article_id comment.id %}">삭제하기</a>
+        <br>
+    {% endfor %}
+{% else %}
+    <p>no comments</p>
+{% endif %}
+
+<a href="{% url 'articles:show' %}">게시판 돌아가기</a>
+
+{% endblock %}
