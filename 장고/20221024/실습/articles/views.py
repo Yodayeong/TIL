@@ -11,7 +11,9 @@ def create(request):
     if request.method == 'POST':
         form = ArticleForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            article_form = form.save(commit=False)
+            article_form.user = request.user
+            article_form.save()
             messages.success(request, '글 작성이 완료되었습니다.')
             return redirect('articles:index')
     else:
@@ -56,6 +58,7 @@ def comment(request, pk):
         if comment_form.is_valid():
             comment = comment_form.save(commit=False)
             comment.article = article
+            comment.user = request.user
             comment.save()
             return redirect('articles:comment', article.pk)
     else:

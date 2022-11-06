@@ -1,7 +1,5 @@
 ## Many to many relationship
 
-
-
 - 병원 예약 시스템 구축을 위한 데이터 베이스 모델링을 진행한다면?
 
   <hospitals_doctor>
@@ -262,4 +260,56 @@
           return f'{self.pk}번 환자 {self.name}'
   ```
 
-  
+
+
+
+### 실습
+
+- ManyToManyField를 활용해서 like_users(좋아요한 유저) 필드 만들기
+
+```python
+#articles/models.py
+
+from django.db import models
+from imagekit.models import ProcessedImageField
+from imagekit.processors import ResizeToFill
+from django.conf import settings
+
+
+# Create your models here.
+class Article(models.Model):
+    title = models.CharField(max_length=20)
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    image = ProcessedImageField(upload_to='images/', blank=True, processors=[ResizeToFill(400, 300)], format='JPEG', options={'quality': 60})
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    #settings의 AUTH_USER_MODEL를 참조하고, 반대로 참조할 related_names도 적어줌
+    like_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='like_articles')
+
+class Comment(models.Model):
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    article = models.ForeignKey(Article, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+```
+
+- **python manage.py shell_plus**로 보기
+
+```bash
+#article을 하나 가져옴
+a1 = Article.objects.all()[0]
+
+#user를 하나 가져옴
+u1 = User.objects.all()[0]
+
+#article1에 좋아요 한 user를 한명 추가
+a1.like_users.add(u1)
+
+#user1이 좋아요 한 글 보기
+u1.like_articles.all()
+
+#article1에 좋아요 한 유저 보기
+a1.like_users.all()
+```
+
