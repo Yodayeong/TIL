@@ -12,7 +12,6 @@ public class BankAccount {
     //메서드(동적)
     public void inquiry() {}
     public void deposit() {}
-    public void withdraw() {}
     public void heldInDormant() {}
     //private => 동일 클래스 안에서만 참조 및 수정 가능
     public void changePassword (int password) {
@@ -43,5 +42,53 @@ public class BankAccount {
         this.balance = balance;
         this.password = password;
         this.isDormant = isDormant;
+    }
+
+    public int getBankCode() {
+        return bankCode;
+    }
+
+    public void setBankCode(int bankCode) {
+        this.bankCode = bankCode;
+    }
+
+    public int getAccountNo() {
+        return accountNo;
+    }
+
+    public void setAccountNo(int accountNo) {
+        this.accountNo = accountNo;
+    }
+
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
+    public int getBalance() {
+        return balance;
+    }
+
+    public void setBalance(int balance) {
+        this.balance = balance;
+    }
+
+    public boolean isDormant() {
+        return isDormant;
+    }
+
+    public void setDormant(boolean dormant) {
+        isDormant = dormant;
+    }
+
+    public int getPassword() {
+        return password;
+    }
+
+    public void setPassword(int password) {
+        this.password = password;
     }
 }

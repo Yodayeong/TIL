@@ -13,6 +13,6 @@ public class ClassExample {
 
         BankAccount bankAccount = new BankAccount();
         bankAccount.changePassword(123456);
-        System.out.println(bankAccount.password);
+        System.out.println(bankAccount.getPassword());
     }
 }
