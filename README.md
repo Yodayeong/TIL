@@ -1,6 +1,6 @@
 # ❤Today I Learned❤
 
-매일매일 잔디 채워나가자 ㅎㅎ
+매일매일 잔디 채워나가자 ㅎㅎ hello
 
 ![코딩](https://c.tenor.com/2co4feAipsYAAAAd/hasbulla-hasbik.gif)
 
